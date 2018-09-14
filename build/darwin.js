@@ -1,7 +1,7 @@
 const Build = require('nativefier').default
 
 // Load configuration objects from json files
-var darwin = require('./darwin')
+var darwin = require('./darwin.json')
 
 // Functions
 function buildThis (options) {
