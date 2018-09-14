@@ -1,8 +1,7 @@
 const Build = require('nativefier').default
 
 // Load configuration objects from json files
-var linux = require('./linux')
-var windows = require('./win32')
+var linux = require('./linux.json')
 
 // Functions
 function buildThis (options) {
@@ -12,4 +11,3 @@ function buildThis (options) {
 }
 
 buildThis(linux)
-buildThis(windows)
