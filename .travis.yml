@@ -1,50 +1,20 @@
-matrix:
-  include:
-    - os: osx
-      osx_image: xcode9.4
-      language: node_js
-      node_js: stable
-      env:
-        - ELECTRON_CACHE=$HOME/.cache/electron
-        - ELECTRON_BUILDER_CACHE=$HOME/.cache/electron-builder
-
-    - os: linux
-      services: docker
-      language: node_js
-      node_js: stable
-cache:
-  directories:
-    - node_modules
-    - $HOME/.cache/electron
-    - $HOME/.cache/electron-builder
-
-
+os: osx
+osx_image: xcode9.4
+language: node_js
+node_js: stable
 script:
-  - |
-    if [ "$TRAVIS_OS_NAME" == "linux" ]; then
-      docker run --rm \
-        --env-file <(env | grep -iE 'DEBUG|NODE_|ELECTRON_|YARN_|NPM_|CI|CIRCLE|TRAVIS|APPVEYOR_|CSC_|_TOKEN|_KEY|AWS_|STRIP|BUILD_') \
-        -v ${PWD}:/project \
-        -v ~/.cache/electron:/root/.cache/electron \
-        -v ~/.cache/electron-builder:/root/.cache/electron-builder \
-        electronuserland/builder:wine \
-        /bin/bash -c "yarn --link-duplicates --pure-lockfile && node ./build && yarn build -w nsis --pd ./knittig/SKIOApp-win32-x64/ && yarn build -l deb --pd ./knitting/skio-app-linux-x64/"
-    else
-    yarn --link-duplicates --pure-lockfile && node ./build/darwin && yarn build -m dmg --pd ./knitting/SKIOApp-darwin-x64/SKIOApp.app/
-    fi
+  - yarn --link-duplicates --pure-lockfile
+  - node ./build/darwin
+  - yarn build -m dmg --pd ./knitting/SKIOApp-darwin-x64/SKIOApp.app/
 before_cache:
   - rm -rf $HOME/.cache/electron-builder/wine
-branches:
-  except:
-    - "/^v\\d+\\.\\d+\\.\\d+$/"
+branches: darwin
 deploy:
   provider: releases
   api_key:
     secure: WxZOI5QFvqtxCbVC2Rv8Vk/RjZ3eDOp0+rSFiW08JmOXfSAXotY3JXv8mkKMH/cuXlwIGVLOv362I5BPwU9ASzl+k1wmpnbBdKYxOJjL+vA6xIClPwsvSIW6TlYenGYW/ggKBhkShLx+ZGnmdfgUZ5vkvutnWZErQOJ/lVi6LKMa0QncDQArlAdUEBzdEnEGagxoweDnoLQYjBT5vV01REPhSSG9NXyyM/aSBg35rciB4YBF/lJXQtQXEJIrB6ZtZXofVBXM0nsea62wfprDmRhuZ23tIkOWHEOGIycItu1/K46MWTgaS8m6XFWJ0PjojYqz/hr4TOfZ1JicQ9yatDk1Y5JCSjyBSXyWPPZNrYlSC8nHsmqRb4KC3AWsn8ddBDBwiuwlzwVkCG4OBf2qdZnbnqMDRe9iUlY+/YUXWdbCaNNJjJAN8C+scEzJq3rcvhrHWbeGmaXkhHLiPdt87vsELIy8Xb1k4thbMRsk5WZl1Ufl9gJ8TqvuW99XWReIn9dUQt2rxtrENT8nHLN4ikCgP07+isByZyBZOX+usFFoDbOm1eP9ykAlLri5oD/4dSdOspz1CgxjboHiAypLHrlGHiD0CSaMoqmp2LFl6Vnss3KrB7NTPRwraFKEaEr8/LaGkHkaC3AJct0H/UcsPysYQuxdraG6MOamCieSks0=
   skip_cleanup: true
-  file: 
-  - 'dist/SKIOApp_1.0.0_amd64.deb'
-  - 'dist/SKIOApp-1.0.0.dmg'
-  - 'dist/SKIOApp Setup 1.0.0.exe'
+  file: ./dist/SKIOApp-1.0.0.dmg
   on:
-    repo: etaletai13/SKIOApp
+    repo: etaletai13/SKIOAp
+    branch: darwin
