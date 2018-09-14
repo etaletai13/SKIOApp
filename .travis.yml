@@ -8,20 +8,20 @@ cache:
     - $HOME/.cache/electron
     - $HOME/.cache/electron-builder
 script:
-    -  docker run --rm \
+    - docker run --rm \
         --env-file <(env | grep -iE 'DEBUG|NODE_|ELECTRON_|YARN_|NPM_|CI|CIRCLE|TRAVIS|APPVEYOR_|CSC_|_TOKEN|_KEY|AWS_|STRIP|BUILD_') \
         -v ${PWD}:/project \
         -v ~/.cache/electron:/root/.cache/electron \
         -v ~/.cache/electron-builder:/root/.cache/electron-builder \
         electronuserland/builder:wine \
-        /bin/bash -c "yarn --link-duplicates --pure-lockfile && node ./build && yarn build -w nsis --pd ./knittig/SKIOApp-win32-x64/ && yarn build -l deb --pd ./knitting/skio-app-linux-x64/"
+        /bin/sh "yarn --link-duplicates && node ./build/win32 && yarn build -w NSIS --pd '/knitting/knitting/SKIOApp-win32-x64/'"
 before_cache:
   - rm -rf $HOME/.cache/electron-builder/wine
 deploy:
   provider: releases
   api_key: $GH_TOKEN
   skip_cleanup: true
-  file: './dist/SKIOApp-1.0.0.dmg'
+  file: '.dist/SKIOApp Setup 1.0.0.exe'
   on:
     repo: etaletai13/SKIOApp
-    branch: master
+    branch: windows
