@@ -6,15 +6,13 @@ script:
   - yarn --link-duplicates --pure-lockfile
   - node ./build/darwin
   - yarn build -m dmg --pd ./knitting/SKIOApp-darwin-x64/SKIOApp.app/
-before_cache:
-  - rm -rf $HOME/.cache/electron-builder/wine
 branches: darwin
 deploy:
   provider: releases
   api_key:
-    secure: WxZOI5QFvqtxCbVC2Rv8Vk/RjZ3eDOp0+rSFiW08JmOXfSAXotY3JXv8mkKMH/cuXlwIGVLOv362I5BPwU9ASzl+k1wmpnbBdKYxOJjL+vA6xIClPwsvSIW6TlYenGYW/ggKBhkShLx+ZGnmdfgUZ5vkvutnWZErQOJ/lVi6LKMa0QncDQArlAdUEBzdEnEGagxoweDnoLQYjBT5vV01REPhSSG9NXyyM/aSBg35rciB4YBF/lJXQtQXEJIrB6ZtZXofVBXM0nsea62wfprDmRhuZ23tIkOWHEOGIycItu1/K46MWTgaS8m6XFWJ0PjojYqz/hr4TOfZ1JicQ9yatDk1Y5JCSjyBSXyWPPZNrYlSC8nHsmqRb4KC3AWsn8ddBDBwiuwlzwVkCG4OBf2qdZnbnqMDRe9iUlY+/YUXWdbCaNNJjJAN8C+scEzJq3rcvhrHWbeGmaXkhHLiPdt87vsELIy8Xb1k4thbMRsk5WZl1Ufl9gJ8TqvuW99XWReIn9dUQt2rxtrENT8nHLN4ikCgP07+isByZyBZOX+usFFoDbOm1eP9ykAlLri5oD/4dSdOspz1CgxjboHiAypLHrlGHiD0CSaMoqmp2LFl6Vnss3KrB7NTPRwraFKEaEr8/LaGkHkaC3AJct0H/UcsPysYQuxdraG6MOamCieSks0=
+    secure: ENbdBm5hdUg3uYrrBhCBs9NycmQRt8zi293il5cV1Su/Mtj/SnBpdqQ7Ls+puhz7R8IaPvVMTgjKETp2igE7lkC43wPK7IE6yFioWtErCFISWFgCH/+2Q/z1+ZvBDVOVS+MclmcZnbAFZ4SgPLd0Vlv02qefDK6/W4uBVEoSBQjqYVLV+T7A+1LxJ48hit1+rRlMScFzb8uuce5TRZNh36uzhtHczSIWHFx6hj07XE+IzZ4s8HStWe13IDad7qg3fYlgqvaPWI5QN4Q3RIA16w17sn/WCkX/iDm3GhrL5nP8Y0tIwR5je8ClevRTe8o7Gs6AupgKHdyuaPb8djRCN81aTmpEIe/E6UXbrPg3Z5QGHHQtwz0Jzt4OsumijjFm4AfdiAlHCEJ04DW26vUoJdEqdBjjPKX8Slc3G/3qYJovf9D2VVDxj4ACTnPUriI88Io5aZnaVYa4brH1AWKbH3by3KbWu2O1plKHmjeyW9B5eLDDxVW5GhHvIQEsGSMR2FG1SqFv7olPoqPgXJruRpYW9GsBeerUqzhPp778QtSIygWlCF9GOAtwPHTPnha/9cKAFtgr5pkwk7/9dkFvruErBhjWyhGXpNxbqvBKq0Z0hm9zpmRKvp8ofMpxG1ce6rWy43Xby6/goYyAOEiZkD+kpAHNpAw2H3bn7N4Cqp0=
   skip_cleanup: true
-  file: ./dist/SKIOApp-1.0.0.dmg
+  file: dist/SKIOApp-1.0.0.dmg
   on:
-    repo: etaletai13/SKIOAp
+    repo: etaletai13/SKIOApp
     branch: darwin
