@@ -14,3 +14,4 @@ deploy:
   file: './dist/SKIOApp-1.0.0.dmg'
   on:
     repo: etaletai13/SKIOApp
+    branch: darwin
