@@ -9,8 +9,7 @@ script:
 branches: darwin
 deploy:
   provider: releases
-  api_key:
-    secure: ENbdBm5hdUg3uYrrBhCBs9NycmQRt8zi293il5cV1Su/Mtj/SnBpdqQ7Ls+puhz7R8IaPvVMTgjKETp2igE7lkC43wPK7IE6yFioWtErCFISWFgCH/+2Q/z1+ZvBDVOVS+MclmcZnbAFZ4SgPLd0Vlv02qefDK6/W4uBVEoSBQjqYVLV+T7A+1LxJ48hit1+rRlMScFzb8uuce5TRZNh36uzhtHczSIWHFx6hj07XE+IzZ4s8HStWe13IDad7qg3fYlgqvaPWI5QN4Q3RIA16w17sn/WCkX/iDm3GhrL5nP8Y0tIwR5je8ClevRTe8o7Gs6AupgKHdyuaPb8djRCN81aTmpEIe/E6UXbrPg3Z5QGHHQtwz0Jzt4OsumijjFm4AfdiAlHCEJ04DW26vUoJdEqdBjjPKX8Slc3G/3qYJovf9D2VVDxj4ACTnPUriI88Io5aZnaVYa4brH1AWKbH3by3KbWu2O1plKHmjeyW9B5eLDDxVW5GhHvIQEsGSMR2FG1SqFv7olPoqPgXJruRpYW9GsBeerUqzhPp778QtSIygWlCF9GOAtwPHTPnha/9cKAFtgr5pkwk7/9dkFvruErBhjWyhGXpNxbqvBKq0Z0hm9zpmRKvp8ofMpxG1ce6rWy43Xby6/goYyAOEiZkD+kpAHNpAw2H3bn7N4Cqp0=
+  api_key: ${GH_TOKEN}
   skip_cleanup: true
   file: dist/SKIOApp-1.0.0.dmg
   on:
