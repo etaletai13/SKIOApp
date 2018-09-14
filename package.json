@@ -19,10 +19,6 @@
     "postinstall": "echo \"Installing app deps\\n\" && yarn install-app-deps",
     "lint": "echo \"Linting the yarn\\n\" && yarn prettier-standard build/*.json pack/* *.json --write",
     "knit": "echo \"Knitting the app\\n\" && node ./build",
-    "box": "yarn box:darwin && yarn box:linux && yarn box:windows",
-    "box:darwin": "echo \"Boxing up to ship DMG:\\n\" && yarn build -m dmg --pd  ./knitting/SKIOApp-darwin-x64/SKIOApp.app",
-    "box:linux": "echo \"Boxing up to ship DEB:\\n\" && yarn build  -l deb --pd  ./knitting/skio-app-linux-x64/",
-    "box:windows": "echo \"Boxing up to ship NSIS:\\n\" && yarn build -w nsis --pd  ./knitting/SKIOApp-win32-x64/",
     "prepare": "yarn lint && yarn knit && yarn box",
     "test": "echo \"No tests yet. But we made dis.\\n\" && echo $(ls dist)"
   }
