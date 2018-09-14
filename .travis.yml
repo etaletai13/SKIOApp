@@ -1,0 +1,17 @@
+os: osx
+language: node_js
+before_install:
+- brew install wine
+node_js:
+- stable
+deploy:
+  provider: releases
+  api_key:
+    secure: WxZOI5QFvqtxCbVC2Rv8Vk/RjZ3eDOp0+rSFiW08JmOXfSAXotY3JXv8mkKMH/cuXlwIGVLOv362I5BPwU9ASzl+k1wmpnbBdKYxOJjL+vA6xIClPwsvSIW6TlYenGYW/ggKBhkShLx+ZGnmdfgUZ5vkvutnWZErQOJ/lVi6LKMa0QncDQArlAdUEBzdEnEGagxoweDnoLQYjBT5vV01REPhSSG9NXyyM/aSBg35rciB4YBF/lJXQtQXEJIrB6ZtZXofVBXM0nsea62wfprDmRhuZ23tIkOWHEOGIycItu1/K46MWTgaS8m6XFWJ0PjojYqz/hr4TOfZ1JicQ9yatDk1Y5JCSjyBSXyWPPZNrYlSC8nHsmqRb4KC3AWsn8ddBDBwiuwlzwVkCG4OBf2qdZnbnqMDRe9iUlY+/YUXWdbCaNNJjJAN8C+scEzJq3rcvhrHWbeGmaXkhHLiPdt87vsELIy8Xb1k4thbMRsk5WZl1Ufl9gJ8TqvuW99XWReIn9dUQt2rxtrENT8nHLN4ikCgP07+isByZyBZOX+usFFoDbOm1eP9ykAlLri5oD/4dSdOspz1CgxjboHiAypLHrlGHiD0CSaMoqmp2LFl6Vnss3KrB7NTPRwraFKEaEr8/LaGkHkaC3AJct0H/UcsPysYQuxdraG6MOamCieSks0=
+  skip_cleanup: true
+  file: 
+  - 'dist/SKIOApp_1.0.0_amd64.deb'
+  - 'dist/SKIOApp-1.0.0.dmg'
+  - 'dist/SKIOApp Setup 1.0.0.exe'
+  on:
+    repo: etaletai13/SKIOApp
