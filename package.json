@@ -17,7 +17,7 @@
     "prettier-standard": "latest"
   },
   "scripts": {
-    "dist": "yarn build -w nsis --pd \"./knitting/SKIOApp-win32-x86/\"",
+    "dist": "yarn build -w nsis --pd \"./knitting/SKIOApp-win32-ia32/\"",
     "lint":
       "echo \"Linting the yarn\\n\" && yarn prettier-standard build/*.json pack/* *.json --write",
     "test": "echo \"No tests yet. But we made dis.\\n\" && echo $(ls dist)"
