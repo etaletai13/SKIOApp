@@ -7,7 +7,7 @@
   "titleBarStyle": "hidden",
   "hideWindowFrame": true,
   "platform": "win32",
-  "arch": "x86",
+  "arch": "ia32",
   "version": "0.36.4",
   "out": "knitting",
   "overwrite": true,
