@@ -3,13 +3,13 @@
   "targetUrl": "https://skiomusic.com/login",
   "disableDevTools": true,
   "disableContextMenu": true,
-  "verbose": true,
+  "verbose": false,
   "titleBarStyle": "hidden",
-  "hideWindowFrame": true,
-  "platform": "win32",
+  "hideWindowFrame": false,
+  "platform": "linux",
   "arch": "x64",
   "version": "0.36.4",
-  "out": "knitting",
+  "out": "./knitting",
   "overwrite": true,
   "counter": true,
   "bounce": true,
@@ -22,19 +22,8 @@
   "ignoreCertificate": false,
   "ignoreGpuBlacklist": false,
   "enableEs3Apis": true,
-  "insecure": false,
   "honest": false,
   "zoom": 1.14131211,
   "singleInstance": true,
-  "fileDownloadOptions": {
-    "saveAs": true
-  },
-  "win32metadata": {
-    "CompanyName": "Etaletai",
-    "FileDescription": "A simple app for SKIO Music",
-    "OriginalFilename": "SKIOApp",
-    "ProductName": "SKIOApp",
-    "InternalName": "SKIOApp"
-  },
   "internalUrls": ".*(facebook|google|soundcloud).*(com|net).*"
 }
