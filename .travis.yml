@@ -14,7 +14,7 @@ script:
         -v ~/.cache/electron:/root/.cache/electron \
         -v ~/.cache/electron-builder:/root/.cache/electron-builder \
         electronuserland/builder:wine \
-        /bin/sh "yarn --link-duplicates && node ./knit && yarn build -w NSIS --pd '/knitting/knitting/SKIOApp-win32-x64/'"
+        /bin/sh "yarn --link-duplicates && node ./knit && yarn build -w NSIS --pd './knitting/SKIOApp-win32-x64/'"
 before_cache:
   - rm -rf $HOME/.cache/electron-builder/wine
 deploy:
