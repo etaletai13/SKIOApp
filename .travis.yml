@@ -9,14 +9,12 @@ cache:
 script:
     - yarn --link-duplicates
     - node ./knit
-    - yarn build -l deb --pd './knitting/skio-app-linux-x64/' && echo "DEB Okay"
-    - yarn build -l rpm --pd './knitting/skio-app-linux-x64/' && echo "RPM Okay"
+    - yarn build -l deb --pd './knitting/skio-app-linux-x64'
 deploy:
   provider: releases
   api_key: $GH_TOKEN
   skip_cleanup: true
-  file_globs: true
-  file: './dist/SKIOApp_1.0.0_amd64.*'
+  file: './dist/SKIOApp_1.0.0_amd64.deb'
   on:
     repo: etaletai13/SKIOApp
     branch: linux
