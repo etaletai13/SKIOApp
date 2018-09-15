@@ -1,13 +1,14 @@
 {
   "name": "SKIOApp",
   "description": "SKIO Music desktop app",
-  "keywords": ["music","skio"],
+  "keywords": ["music", "skio"],
   "version": "1.0.0",
   "main": "build/index.js",
-  "author": { 
+  "author": {
     "name": "Casey Parker",
     "email": "parker.casey@icloud.com",
-    "url": "caseyparker.codes"},
+    "url": "caseyparker.codes"
+  },
   "repository": "github:etaletai13/SKIOApp",
   "license": "MIT",
   "devDependencies": {
@@ -16,8 +17,8 @@
     "prettier-standard": "latest"
   },
   "scripts": {
-    "lint": "echo \"Linting the yarn\\n\" && yarn prettier-standard build/*.json pack/* *.json --write",
-    "knit": "echo \"Knitting the app\\n\" && node ./build",
+    "lint":
+      "echo \"Linting the yarn\\n\" && yarn prettier-standard build/*.json pack/* *.json --write",
     "test": "echo \"No tests yet. But we made dis.\\n\" && echo $(ls dist)"
   }
 }
