@@ -17,6 +17,6 @@
   },
   "scripts": {
     "lint": "echo \"Linting the yarn\\n\" && yarn prettier-standard build/*.json pack/* *.json --write",
-    "test": "echo \"No tests yet. But we made dis.\\n\" && echo $(ls dist)"
+    "test": "echo \"No tests just yet.\""
   }
 }

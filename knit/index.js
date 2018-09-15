@@ -1,13 +1,13 @@
 const Build = require('nativefier').default
 
 // Load configuration objects from json files
-var linux = require('./linux.json')
+var linux = require('./options')
 
 // Functions
-function buildThis (options) {
+function buildFor (options) {
   return new Promise(resolve => {
     Build(options, resolve)
   })
 }
 
-buildThis(linux)
+buildFor(linux)

@@ -8,15 +8,15 @@ cache:
     - $HOME/.cache/electron-builder
 script:
     - yarn --link-duplicates
-    - node ./build/linux
-    - yarn build -l deb rpm --pd '/knitting/knitting/skio-app-linux-x64/'
+    - node ./knit
+    - yarn build -l deb --pd './knitting/skio-app-linux-x64/' && echo "DEB Okay"
+    - yarn build -l rpm --pd './knitting/skio-app-linux-x64/' && echo "RPM Okay"
 deploy:
   provider: releases
   api_key: $GH_TOKEN
   skip_cleanup: true
-  file: 
-    - './dist/SKIOApp_1.0.0_amd64.deb'
-    - './dist/SKIOApp_1.0.0_amd64.rpm'
+  file_globs: true
+  file: './dist/SKIOApp_1.0.0_amd64.*'
   on:
     repo: etaletai13/SKIOApp
     branch: linux
